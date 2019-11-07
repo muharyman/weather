@@ -1,4 +1,4 @@
-package com.muharyman.weather.view;
+package com.muharyman.weather.view.page;
 
 import androidx.appcompat.app.AppCompatActivity;
 
