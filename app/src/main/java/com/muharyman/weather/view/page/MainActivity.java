@@ -1,8 +1,10 @@
-package com.muharyman.weather;
+package com.muharyman.weather.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.muharyman.weather.R;
 
 public class MainActivity extends AppCompatActivity {
 
