@@ -1,38 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/input_kota"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/transparent"
+        android:hint="City Name"
+        android:inputType="text"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/gps"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_below="@id/input_kota"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/transparent"
+        android:hint="Allow GPS"
+        android:inputType="text"
+        android:textSize="16sp" />
+
+
 
     <TextView
         android:id="@+id/kota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bandung"
-        android:textSize="34sp"
+        android:layout_centerInParent="true"
         android:fontFamily="sans-serif-condensed-medium"
-        android:layout_centerInParent="true"/>
+        android:text="Bandung"
+        android:textSize="34sp" />
 
     <TextView
         android:id="@+id/cuaca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/kota"
-        android:layout_marginTop="12sp"
         android:layout_centerHorizontal="true"
-        android:text="Mostly Cloudly"
+        android:layout_marginTop="12sp"
         android:fontFamily="sans-serif-light"
-        android:textSize="15dp"/>
+        android:text="Mostly Cloudly"
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/suhu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/cuaca"
-        android:layout_marginTop="30sp"
         android:layout_centerHorizontal="true"
-        android:text="25"
+        android:layout_marginTop="30sp"
         android:fontFamily="sans-serif-condensed"
-        android:textSize="50dp"/>
+        android:text="25"
+        android:textSize="50dp" />
 
 </RelativeLayout>
