@@ -11,6 +11,6 @@ public interface WeatherWebService {
     Call<WeatherResponse> getCurrentWeatherCity(@Query("name") String name , @Query("APPID") String appid );
 
     @GET("data/2.5/weather?")
-    Call<WeatherResponse> getCurrentWeatherData(@Query("lat") String lat, @Query("lon") String lon, @Query("APPID") String appid);
+    Call<WeatherResponse> getCurrentWeatherData(@Query("lat") double lat, @Query("lon") double lon, @Query("APPID") String appid);
 
 }
