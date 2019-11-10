@@ -34,9 +34,9 @@ public abstract class BaseFragment extends Fragment {
     protected void setupWebservice() {
         client = new OkHttpClient.Builder()
                 .addInterceptor(new StethoInterceptor())
-                .connectTimeout(20, TimeUnit.SECONDS)
-                .readTimeout(20, TimeUnit.SECONDS)
-                .writeTimeout(20, TimeUnit.SECONDS)
+                .connectTimeout(10, TimeUnit.SECONDS)
+                .readTimeout(10, TimeUnit.SECONDS)
+                .writeTimeout(10, TimeUnit.SECONDS)
                 .build();
 
 //        Gson gson = new GsonBuilder()
