@@ -1,6 +1,8 @@
 package com.muharyman.weather.model;
 
-public class Wind {
+import io.realm.RealmObject;
+
+public class Wind extends RealmObject {
     public float speed;
     public int deg;
 }

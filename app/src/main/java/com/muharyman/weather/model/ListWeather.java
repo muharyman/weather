@@ -2,6 +2,9 @@ package com.muharyman.weather.model;
 
 import java.util.List;
 
-public class ListWeather {
-    public List<Weather> weather;
+import io.realm.RealmList;
+import io.realm.RealmObject;
+
+public class ListWeather extends RealmObject {
+    public RealmList<Weather> weather;
 }

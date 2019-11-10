@@ -1,5 +1,7 @@
 package com.muharyman.weather.model;
 
-public class Clouds {
+import io.realm.RealmObject;
+
+public class Clouds extends RealmObject {
     public int all;
 }

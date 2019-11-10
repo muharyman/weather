@@ -1,6 +1,8 @@
 package com.muharyman.weather.model;
 
-public class Sys {
+import io.realm.RealmObject;
+
+public class Sys extends RealmObject {
     public String country;
     public long sunrise ;
     public long sunset ;

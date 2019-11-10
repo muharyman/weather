@@ -1,6 +1,8 @@
 package com.muharyman.weather.model;
 
-public class Main {
+import io.realm.RealmObject;
+
+public class Main extends RealmObject {
     public float temp;
     public int pressure;
     public int humidity;

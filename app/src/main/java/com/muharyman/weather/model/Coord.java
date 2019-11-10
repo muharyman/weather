@@ -1,6 +1,8 @@
 package com.muharyman.weather.model;
 
-public class Coord {
-    public int lon;
-    public int lat;
+import io.realm.RealmObject;
+
+public class Coord extends RealmObject {
+    public double lon;
+    public double lat;
 }

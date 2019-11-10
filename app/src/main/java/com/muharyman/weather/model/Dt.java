@@ -1,5 +1,7 @@
 package com.muharyman.weather.model;
 
-public class Dt {
+import io.realm.RealmObject;
+
+public class Dt  extends RealmObject {
     public long dt;
 }
