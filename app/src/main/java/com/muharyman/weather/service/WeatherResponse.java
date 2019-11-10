@@ -1,4 +1,4 @@
-package com.muharyman.weather.response;
+package com.muharyman.weather.service.service;
 
 import com.google.gson.annotations.SerializedName;
 import com.muharyman.weather.model.Clouds;
@@ -9,7 +9,6 @@ import com.muharyman.weather.model.Rain;
 import com.muharyman.weather.model.Sys;
 import com.muharyman.weather.model.Wind;
 
-import io.realm.Case;
 import io.realm.Realm;
 import io.realm.RealmObject;
 import io.realm.RealmResults;
@@ -17,8 +16,6 @@ import io.realm.annotations.Index;
 import io.realm.annotations.PrimaryKey;
 
 public class WeatherResponse extends RealmObject {
-    @Index
-    @PrimaryKey
     public Coord coord;
     @SerializedName("weather")
     public ListWeather listWeather;
@@ -29,6 +26,8 @@ public class WeatherResponse extends RealmObject {
     public Clouds clouds;
     public Sys sys;
     public int timezone;
+    @Index
+    @PrimaryKey
     public long id;
     public String name;
     public int cod;

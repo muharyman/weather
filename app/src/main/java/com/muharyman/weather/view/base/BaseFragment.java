@@ -9,7 +9,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.muharyman.weather.App;
+import com.muharyman.weather.service.LongTypeAdapter;
 
 import java.util.concurrent.TimeUnit;
 
@@ -39,14 +42,15 @@ public abstract class BaseFragment extends Fragment {
                 .writeTimeout(10, TimeUnit.SECONDS)
                 .build();
 
-//        Gson gson = new GsonBuilder()
-//                .serializeNulls()
-//                .registerTypeAdapter(Long.class, new LongTypeAdapter())
-//                .setDateFormat("yyyy-MM-dd HH:mm:ss")
-//                .create();
+        Gson gson = new GsonBuilder()
+                .serializeNulls()
+                .registerTypeAdapter(Long.class, new LongTypeAdapter())
+                .setDateFormat("yyyy-MM-dd HH:mm:ss")
+                .create();
+
         retrofit = new Retrofit.Builder()
                 .baseUrl(App.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create(/*gson*/))
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(client)
                 .build();
 

@@ -5,7 +5,10 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.muharyman.weather.App;
+import com.muharyman.weather.service.LongTypeAdapter;
 
 import java.util.concurrent.TimeUnit;
 
@@ -32,15 +35,15 @@ public class BaseActivity extends AppCompatActivity {
                 .writeTimeout(10, TimeUnit.SECONDS)
                 .build();
 
-//        Gson gson = new GsonBuilder()
-//                .serializeNulls()
-//                .registerTypeAdapter(Long.class, new LongTypeAdapter())
-//                .setDateFormat("yyyy-MM-dd HH:mm:ss")
-//                .create();
+        Gson gson = new GsonBuilder()
+                .serializeNulls()
+                .registerTypeAdapter(Long.class, new LongTypeAdapter())
+                .setDateFormat("yyyy-MM-dd HH:mm:ss")
+                .create();
 
         retrofit = new Retrofit.Builder()
                 .baseUrl(App.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(client)
                 .build();
 
