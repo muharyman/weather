@@ -7,7 +7,8 @@ import io.realm.RealmConfiguration;
 
 public class App extends Application {
 
-    public static final String BASE_URL = "aaaaaaaa";
+    public static final String BASE_URL = "api.openweathermap.org";
+    public static final String APPID = "9fb6176409645f92abc6d663b51e379a";
 
     @Override
     public void onCreate() {
