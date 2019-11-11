@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import io.realm.RealmObject;
 
-public class Rain extends RealmObject {
+public class Snow extends RealmObject {
     @SerializedName("1h")
     public float h1;
     @SerializedName("3h")
