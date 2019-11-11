@@ -1,26 +1,25 @@
 package com.muharyman.weather.view.page;
 
+import android.os.Bundle;
+
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import android.os.Bundle;
-
 import com.google.android.material.tabs.TabLayout;
 import com.muharyman.weather.R;
-import com.muharyman.weather.service.service.WeatherResponse;
 import com.muharyman.weather.view.base.BaseActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends BaseActivity implements Contract{
+public class MainActivity extends BaseActivity {
 
     @BindView(R.id.tab_layout)
     TabLayout tabLayout;
     @BindView(R.id.viewPager)
     ViewPager viewPager;
 
-    private Adapter adapter;
+    private FragmentAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +27,7 @@ public class MainActivity extends BaseActivity implements Contract{
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        adapter = new Adapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        adapter = new FragmentAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         viewPager.setAdapter(adapter);
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -70,20 +69,8 @@ public class MainActivity extends BaseActivity implements Contract{
         });
 
 
-    }
-
-    @Override
-    public void onSuccess(WeatherResponse weather) {
 
     }
 
-    @Override
-    public void updateData() {
 
-    }
-
-    @Override
-    public void onFailure(String body) {
-
-    }
 }
