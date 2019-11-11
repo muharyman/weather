@@ -10,7 +10,7 @@ public interface WeatherWebService {
     @GET("weather")
     Call<WeatherResponse> getCurrentWeatherCity(@Query("q") String name , @Query("APPID") String appid );
 
-    @GET("data/2.5/weather?")
+    @GET("weather")
     Call<WeatherResponse> getCurrentWeatherData(@Query("lat") double lat, @Query("lon") double lon, @Query("APPID") String appid);
 
 }
