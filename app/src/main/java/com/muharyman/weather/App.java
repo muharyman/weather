@@ -11,7 +11,7 @@ import io.realm.RealmConfiguration;
 
 public class App extends MultiDexApplication {
 
-    public static final String BASE_URL = "http://api.openweathermap.org/";
+    public static final String BASE_URL = "https://api.openweathermap.org/data/2.5/";
     public static final String APPID = "9fb6176409645f92abc6d663b51e379a";
 
     @Override
