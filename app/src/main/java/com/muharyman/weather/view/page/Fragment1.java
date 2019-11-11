@@ -59,7 +59,7 @@ public class Fragment1 extends BaseFragment implements Contract {
     public void onSuccess(WeatherResponse weather) {
         namaKota.setText(weather.name);
         cuaca.setText(weather.weather.get(0).description);
-        suhu.setText(String.valueOf(weather.main.temp));
+        suhu.setText(String.valueOf(convertKelvinToCelcius(weather.main.temp)));
     }
 
     @Override
@@ -112,5 +112,10 @@ public class Fragment1 extends BaseFragment implements Contract {
         } else {
             return true;
         }
+    }
+
+
+    public int convertKelvinToCelcius(float kelvin) {
+        return ((int) (kelvin - 273));
     }
 }

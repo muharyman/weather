@@ -67,7 +67,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         public void bindTo(WeatherResponse currentData) {
             kotaHistory.setText(currentData.name);
             cuacaHistory.setText(currentData.weather.get(0).description);
-            suhuHistory.setText(String.valueOf(currentData.main.temp));
+            suhuHistory.setText(String.valueOf(convertKelvinToCelcius(currentData.main.temp)));
             tanggalHistory.setText(String.valueOf(currentData.date));
 
         }
@@ -89,5 +89,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                 }
             });
         }
+    }
+
+    public int convertKelvinToCelcius(float kelvin) {
+        return ((int) (kelvin - 273));
     }
 }
