@@ -4,26 +4,22 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 
-import com.muharyman.weather.service.WeatherWebService;
 import com.muharyman.weather.service.WeatherResponse;
+import com.muharyman.weather.service.WeatherWebService;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.Calendar;
-import java.util.Date;
 
-import io.realm.ImportFlag;
 import io.realm.Realm;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 import static com.muharyman.weather.App.APPID;
-import static com.muharyman.weather.App.BASE_URL;
 
 public class Presenter {
 
@@ -76,9 +72,9 @@ public class Presenter {
         });
     }
 
-    public void sendGetWeatherGPS(double lat , double lon) {
+    public void sendGetWeatherGPS(double lat, double lon) {
         WeatherWebService service = retrofit.create(WeatherWebService.class);
-        Call<WeatherResponse> call = service.getCurrentWeatherGPS(lat,lon, APPID);
+        Call<WeatherResponse> call = service.getCurrentWeatherGPS(lat, lon, APPID);
         call.enqueue(new Callback<WeatherResponse>() {
             @Override
             public void onResponse(@NonNull Call<WeatherResponse> call,

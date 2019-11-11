@@ -17,7 +17,6 @@ import io.realm.RealmObject;
 import io.realm.RealmResults;
 import io.realm.Sort;
 import io.realm.annotations.Index;
-import io.realm.annotations.PrimaryKey;
 
 public class WeatherResponse extends RealmObject {
     public Coord coord;
@@ -38,11 +37,11 @@ public class WeatherResponse extends RealmObject {
     public int cod;
     public Date date;
 
-    public WeatherResponse(){
+    public WeatherResponse() {
         super();
     }
 
-    public static RealmResults<WeatherResponse> getQuery(Realm realm){
+    public static RealmResults<WeatherResponse> getQuery(Realm realm) {
         return realm.where(WeatherResponse.class).sort("date", Sort.DESCENDING).findAllAsync();
     }
 }

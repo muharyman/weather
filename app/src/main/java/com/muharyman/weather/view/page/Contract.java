@@ -4,6 +4,8 @@ import com.muharyman.weather.service.WeatherResponse;
 
 public interface Contract {
     void onSuccess(WeatherResponse weather);
+
     void updateData();
+
     void onFailure(String body);
 }

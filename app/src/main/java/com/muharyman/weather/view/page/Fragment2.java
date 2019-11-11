@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class Fragment2 extends BaseFragment implements Contract{
+public class Fragment2 extends BaseFragment implements Contract {
 
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
@@ -33,7 +33,7 @@ public class Fragment2 extends BaseFragment implements Contract{
         ButterKnife.bind(this, view);
 
         weatherData = new ArrayList<>();
-        adapter = new Adapter(getContext(),weatherData);
+        adapter = new Adapter(getContext(), weatherData);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setOverScrollMode(View.OVER_SCROLL_NEVER);
         recyclerView.setAdapter(adapter);

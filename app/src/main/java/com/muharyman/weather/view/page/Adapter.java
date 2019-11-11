@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.muharyman.weather.R;
-import com.muharyman.weather.model.Weather;
 import com.muharyman.weather.service.WeatherResponse;
 
 import java.util.List;
@@ -23,11 +22,11 @@ import io.realm.RealmResults;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
-    private List<WeatherResponse> weatherData ;
+    private List<WeatherResponse> weatherData;
     private Context context;
     private Realm realm = Realm.getDefaultInstance();
 
-    public Adapter(Context context , List<WeatherResponse> weatherData){
+    public Adapter(Context context, List<WeatherResponse> weatherData) {
         this.weatherData = weatherData;
         this.context = context;
     }
@@ -35,7 +34,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     @NonNull
     @Override
     public Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_fragment2,parent,false));
+        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_fragment2, parent, false));
     }
 
     @Override
@@ -49,10 +48,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         return weatherData.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.kota_history)
-        TextView kotaHistory ;
+        TextView kotaHistory;
         @BindView(R.id.cuaca_history)
         TextView cuacaHistory;
         @BindView(R.id.suhu_history)
@@ -62,10 +61,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            ButterKnife.bind(this,itemView);
+            ButterKnife.bind(this, itemView);
         }
 
-        public void bindTo(WeatherResponse currentData){
+        public void bindTo(WeatherResponse currentData) {
             kotaHistory.setText(currentData.name);
             cuacaHistory.setText(currentData.weather.get(0).description);
             suhuHistory.setText(String.valueOf(currentData.main.temp));

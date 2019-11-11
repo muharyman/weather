@@ -7,6 +7,6 @@ public class Sys extends RealmObject {
     public int id;
     public String message;
     public String country;
-    public long sunrise ;
-    public long sunset ;
+    public long sunrise;
+    public long sunset;
 }

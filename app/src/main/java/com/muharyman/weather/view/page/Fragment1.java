@@ -86,7 +86,7 @@ public class Fragment1 extends BaseFragment implements Contract {
             double longitude = location.getLongitude();
             double latitude = location.getLatitude();
 
-            presenter.sendGetWeatherGPS(latitude,longitude);
+            presenter.sendGetWeatherGPS(latitude, longitude);
         }
     }
 
