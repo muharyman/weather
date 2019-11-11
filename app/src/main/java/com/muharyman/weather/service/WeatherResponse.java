@@ -33,7 +33,6 @@ public class WeatherResponse extends RealmObject {
     public Sys sys;
     public int timezone;
     @Index
-    @PrimaryKey
     public long id;
     public String name;
     public int cod;
